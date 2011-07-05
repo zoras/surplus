@@ -33,14 +33,14 @@ setInterval(function(){
   var el = document.getElementById('gbi1')
   var uid = document.getElementById('gbi4');
   var frame = document.querySelector('#gbwc iframe');
+  
   if(!el){
     if(uid) port.postMessage({error: 'User '+uid.innerText+' does not have Google+ or is not logged into Google+. Please login to plus.google.com before proceeding.', user: uid.innerText});
     else port.postMessage({error: 'Please sign into Google first'});
   }else{
     port.postMessage({num: el.innerText, user: uid.innerText, src: frame?frame.src:''})
   }
-  
-  scrollTo(0,0);
+  scrollTo(0,0)
 }, 1000)
 
 var head = document.getElementsByTagName('head')[0], style = document.createElement('link');
